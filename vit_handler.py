@@ -38,7 +38,7 @@ class ViTHandler(object):
             shutil.copy(os.path.join(modelDir, 'config.json'), os.path.join(modelPath, 'config.json'))
             shutil.copy(os.path.join(modelDir, 'pytorch_model.bin'), os.path.join(modelPath, 'pytorch_model.bin'))
 
-        # load the tokenizer and model
+        # load the processor and model
         self.imageProcessor = AutoImageProcessor.from_pretrained(processorPath)
         self.model = AutoModel.from_pretrained(modelPath)
         self.model.to(self.device)
